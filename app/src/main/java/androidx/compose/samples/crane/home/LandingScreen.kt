@@ -34,9 +34,7 @@ private const val SplashWaitTime: Long = 2000
 @Composable
 fun LandingScreen(onTimeout: () -> Unit, modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        
         val currentTimeout by rememberUpdatedState(onTimeout)
-
         LaunchedEffect(key1 = onTimeout){
             delay(SplashWaitTime)
             currentTimeout()
